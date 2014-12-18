@@ -1,0 +1,16 @@
+<div id="user_nav">
+  <% if current_user %>
+      HI, <strong><%= current_user.name %></strong>, <br><br>
+      <h5>Facebook Login</h5>
+      <p>Simple Facebook login using omniauth.</p>
+      <br><br>
+      Like US on Facebook - <br>
+      <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FTurnToTech&amp;width&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=588011351296383" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:290px;" allowTransparency="true"></iframe>
+
+      <p><a href="http://turntotech.io/">Go to TurnToTech</a>
+      <div align="center"><%= link_to "SIGN OUT", signout_path, id: "sign_out" %></div><br></p>
+
+  <% else %>
+      <p align="center"><%= link_to "Facebook Login", "/auth/facebook", id: "sign_in" %></p>
+  <% end %>
+</div>
